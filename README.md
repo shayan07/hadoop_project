@@ -95,7 +95,7 @@ visitor2   1491110000005
 
 visitor3   1491110000008
 ```
-Output for Mapper2(output of one slave node) && Input for Reducer2(shuffle and merged from all slave nodes)
+Output for Mapper2 (output of one slave node) && Input for Reducer2 (shuffle and merged from all slave nodes)
 ```
 visitor1   1491110000002
 
