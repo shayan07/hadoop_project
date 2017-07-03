@@ -85,7 +85,7 @@ visitor3   1491110000008
 Reducer1's result is mapper2's input
 
 
-**MapReducer2: topk**
+**MapReducer2: topk, where k = 2 in the following example**
 
 Input for Mapper2
 ```
@@ -95,16 +95,13 @@ visitor2   1491110000005
 
 visitor3   1491110000008
 ```
-
-Output for Mapper2 && Input for Reducer2
+Output for Mapper2(output of one slave node) && Input for Reducer2(shuffle and merged from all slave nodes)
 ```
 visitor1   1491110000002
 
 visitor2   1491110000005
 ```
-
-
-Output for Reducer2
+Output for Reducer2 (top k, where k = 2)
 ```
 visitor1   1491110000002
 
