@@ -20,7 +20,7 @@ Hadoop
   
    - Mapper: parse the input Json file 
   
-   - Reducer: find last seen time of each visitor, from all of their activities
+   - Reducer: de-duplicate each visitor's all actions by choosing the max time value
 
 
 **MapReducer2: topk**
