@@ -18,9 +18,9 @@ Hadoop
  
 **MapReducer1: dedupByPid**
   
-   Mapper: parse the input Json file 
+   - Mapper: parse the input Json file 
   
-   Reducer: find last seen time of each visitor, from their all activities
+   - Reducer: find last seen time of each visitor, from their all activities
 
 
 **MapReducer2: topk**
