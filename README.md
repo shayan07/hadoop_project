@@ -7,16 +7,19 @@ The purpose of this project is to parse records of visitor sessions. Each record
 
 ## Prerequisites
 Java
+
 Maven
+
 Hadoop
 
 ## Design
 
-1 driver configure 2 mapreducers, which are dedupByPid and topK;
+1 driver configure 2 mapreducers, which are dedupByPid and topK.
  
 MapReducer1: dedupByPid
   Mapper: parse the input Json file 
   Reducer: find last seen time of each visitor, from their all activities
+
 MapReducer2: topk
   find the 100 most recent visitors and their last seen time from last step's result
 
