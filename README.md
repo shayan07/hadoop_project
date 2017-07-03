@@ -27,3 +27,40 @@ Hadoop
   
    - Find the 100 most recent visitors and their last seen time from last step's result
 
+For example
+Input for MapReducer1 (dedupByPid):
+
+{
+  "pid": "visitor1",
+  "action": [
+    {
+      "time": "1491110000000",
+      "language": "language"
+    },
+    {
+      "time": "1491110000001",
+      "language": "language"
+    },
+    {
+      "time": "1491110000002",
+      "language": "language"
+    }
+  ]
+}
+{
+  "pid": "visitor2",
+  "action": [
+    {
+      "time": "1491110000003",
+      "language": "language"
+    },
+    {
+      "time": "1491110000004",
+      "language": "language"
+    },
+    {
+      "time": "1491110000005",
+      "language": "language"
+    }
+  ]
+}
