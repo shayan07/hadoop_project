@@ -25,5 +25,5 @@ Hadoop
 
 **MapReducer2: topk**
   
-   Find the 100 most recent visitors and their last seen time from last step's result
+   - Find the 100 most recent visitors and their last seen time from last step's result
 
