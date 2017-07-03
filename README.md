@@ -31,83 +31,81 @@ Hadoop
 
 Assume we have 3 visitors and each have 3 actions. We will get result of the 2 most recent visitors and their last seen time.
 
-**Input for MapReducer1 (dedupByPid):**
+
+###### MapReducer1: dedupByPid
+
+**Input for Mapper1**
 ```
 {
   "pid": "visitor1",
   "action": [
-    {
-      "time": "1491110000000",
-      "language": "language"
-    },
-    {
-      "time": "1491110000001",
-      "language": "language"
-    },
-    {
-      "time": "1491110000002",
-      "language": "language"
-    }
+    {"time": "1491110000000","language": "language"},
+    {"time": "1491110000001","language": "language"},
+    {"time": "1491110000002","language": "language"}
   ]
 }
 {
   "pid": "visitor2",
   "action": [
-    {
-      "time": "1491110000003",
-      "language": "language"
-    },
-    {
-      "time": "1491110000004",
-      "language": "language"
-    },
-    {
-      "time": "1491110000005",
-      "language": "language"
-    }
+    {"time": "1491110000003","language": "language"},
+    {"time": "1491110000004","language": "language"},
+    {"time": "1491110000005","language": "language"}
   ]
 }
 {
   "pid": "visitor3",
   "action": [
-    {
-      "time": "1491110000006",
-      "language": "language"
-    },
-    {
-      "time": "1491110000007",
-      "language": "language"
-    },
-    {
-      "time": "1491110000008",
-      "language": "language"
-    }
+    {"time": "1491110000006","language": "language"},
+    {"time": "1491110000007","language": "language"},
+    {"time": "1491110000008","language": "language"}
   ]
 }
 ```
 
-**Output for MapReducer1 (dedupByPid):**
+**Output for Mapper1 && Input for Reducer1**
 ```
-visitor1 1491110000002
+visitor1   {1491110000000,1491110000001,1491110000002}
 
-visitor2 1491110000005
+visitor2   {1491110000003,1491110000004,1491110000005}
 
-visitor3 1491110000008
-```
-
-**Input for MapReducer2 (topk):**
-```
-visitor1 1491110000002
-
-visitor2 1491110000005
-
-visitor3 1491110000008
+visitor3   {1491110000006,1491110000007,1491110000008}
 ```
 
-**Output for MapReducer2 (topk):**
+**Output for Reducer1**
 ```
-visitor1 1491110000002
+visitor1   1491110000002
 
-visitor2 1491110000005
+visitor2   1491110000005
+
+visitor3   1491110000008
+```
+
+Reducer1's result is mapper2's input
+
+
+###### MapReducer2: topk
+
+**Input for Mapper2**
+```
+visitor1   1491110000002
+
+visitor2   1491110000005
+
+visitor3   1491110000008
+```
+
+**Output for Mapper2 && Input for Reducer2**
+```
+visitor1   1491110000002
+
+visitor2   1491110000005
+```
+
+
+**Output for Reducer2**
+```
+visitor1   1491110000002
+
+visitor2   1491110000005
 ```
 
