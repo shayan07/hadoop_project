@@ -27,9 +27,12 @@ Hadoop
   
    - Find the 100 most recent visitors and their last seen time from last step's result
 
-For example
-Input for MapReducer1 (dedupByPid):
+## For example
 
+Assume we have 3 visitors and each have 3 actions. We will get result of the 2 most recent visitors and their last seen time.
+
+**Input for MapReducer1 (dedupByPid):**
+```
 {
   "pid": "visitor1",
   "action": [
@@ -64,3 +67,47 @@ Input for MapReducer1 (dedupByPid):
     }
   ]
 }
+{
+  "pid": "visitor3",
+  "action": [
+    {
+      "time": "1491110000006",
+      "language": "language"
+    },
+    {
+      "time": "1491110000007",
+      "language": "language"
+    },
+    {
+      "time": "1491110000008",
+      "language": "language"
+    }
+  ]
+}
+```
+
+**Output for MapReducer1 (dedupByPid):**
+```
+visitor1 1491110000002
+
+visitor2 1491110000005
+
+visitor3 1491110000008
+```
+
+**Input for MapReducer2 (topk):**
+```
+visitor1 1491110000002
+
+visitor2 1491110000005
+
+visitor3 1491110000008
+```
+
+**Output for MapReducer2 (topk):**
+```
+visitor1 1491110000002
+
+visitor2 1491110000005
+```
+
