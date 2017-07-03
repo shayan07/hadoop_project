@@ -1,7 +1,7 @@
 # hadoop_project
 
 ## Introduction
-hadoop_project write in Java using Hadoop MapReduce model.
+hadoop_project in Java using Hadoop MapReduce model.
 
 The purpose of this project is to parse records of visitor sessions. Each record contains the visitor unique id ("pid") and an array of actions (activities), each having a timestamp ("time"). Hadoop_project allows you to return a result of the 100 most recent visitors grouped by "pid", and ordered by last seen max("time")
 
@@ -20,7 +20,7 @@ Hadoop
   
    - Mapper: parse the input Json file 
   
-   - Reducer: find last seen time of each visitor, from their all activities
+   - Reducer: find last seen time of each visitor, from all of their activities
 
 
 **MapReducer2: topk**
