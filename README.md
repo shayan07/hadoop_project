@@ -25,11 +25,13 @@ Hadoop
 
 **MapReducer2: topk**
   
-   - Find the 100 most recent visitors and their last seen time from last step's result
+   - Mapper: Find the 100 most recent records at each slave node
+   
+   - Reducer: Find the 100 most recent records from all slave nodes
 
 ## For example
 
-Assume we have 3 visitors and each have 3 actions. We will get result of the 2 most recent visitors and their last seen time.
+Assuming we have 3 visitors and each have 3 actions, we will get the result of the 2 most recent visitors and their last seen time.
 
 
 **MapReducer1: dedupByPid**
