@@ -32,9 +32,9 @@ Hadoop
 Assume we have 3 visitors and each have 3 actions. We will get result of the 2 most recent visitors and their last seen time.
 
 
-###### MapReducer1: dedupByPid
+**MapReducer1: dedupByPid**
 
-**Input for Mapper1**
+Input for Mapper1
 ```
 {
   "pid": "visitor1",
@@ -62,7 +62,7 @@ Assume we have 3 visitors and each have 3 actions. We will get result of the 2 m
 }
 ```
 
-**Output for Mapper1 && Input for Reducer1**
+Output for Mapper1 && Input for Reducer1
 ```
 visitor1   {1491110000000,1491110000001,1491110000002}
 
@@ -71,7 +71,7 @@ visitor2   {1491110000003,1491110000004,1491110000005}
 visitor3   {1491110000006,1491110000007,1491110000008}
 ```
 
-**Output for Reducer1**
+Output for Reducer1
 ```
 visitor1   1491110000002
 
@@ -83,9 +83,9 @@ visitor3   1491110000008
 Reducer1's result is mapper2's input
 
 
-###### MapReducer2: topk
+**MapReducer2: topk**
 
-**Input for Mapper2**
+Input for Mapper2
 ```
 visitor1   1491110000002
 
@@ -94,7 +94,7 @@ visitor2   1491110000005
 visitor3   1491110000008
 ```
 
-**Output for Mapper2 && Input for Reducer2**
+Output for Mapper2 && Input for Reducer2
 ```
 visitor1   1491110000002
 
@@ -102,7 +102,7 @@ visitor2   1491110000005
 ```
 
 
-**Output for Reducer2**
+Output for Reducer2
 ```
 visitor1   1491110000002
 
